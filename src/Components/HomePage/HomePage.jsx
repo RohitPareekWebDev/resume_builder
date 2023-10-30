@@ -29,7 +29,7 @@ function ResumeTemp() {
                                         mouseOver === template.name ?
                                             <div className='absolute mx-7 flex justify-between h-96 w-80 ml-2'>
                                                 <div className='absolute inset-0 flex items-center justify-center'>
-                                                    <NavLink to="/detailform" ><button id='tempUseBtn' className='bg-blue-500 h-10 px-2 rounded-xl font-bold text-white'>Use Template</button></NavLink>
+                                                    <NavLink to="/detailfilling/personalinfo" ><button id='tempUseBtn' className='bg-blue-500 h-10 px-2 rounded-xl font-bold text-white'>Use Template</button></NavLink>
                                                 </div>
                                             </div>
                                             : null

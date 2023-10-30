@@ -3,7 +3,7 @@ import React from 'react'
 function WorkExperience() {
     return (
         <div>
-            saldfjlka
+            WorkExperience
         </div>
     )
 }
