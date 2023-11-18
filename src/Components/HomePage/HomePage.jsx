@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 function ResumeTemp() {
     const [mouseOver, setMouseOver] = useState("mouseNotOver")
     return (
-        <div className='container flex flex-col items-center justify-center h-min ml-16'>
+        <div className='container flex flex-col items-center justify-center h-auto  mx-auto'>
             <div >
                 <h1 className='m-10  p-10 font-bold text-2xl flex justify-center '>Select a Template to get started!</h1>
             </div>
@@ -23,8 +23,9 @@ function ResumeTemp() {
                                         //this function allows us to hide 'Use Template' button when the user moves out from the particular template//
                                         setMouseOver('MouseIsNotOver')
                                     }}
-                                    className=" mx-7 flex justify-between h-96 w-80 ml-2" key={template.name}>
-                                    <img src={template.imageSource} alt="error" />
+                                    className="mx-7 flex justify-between h-96 w-80 ml-2" key={template.name}>
+                                    <img className={`transform transition-transform ${mouseOver === template.name ? 'scale-110' : 'scale-100'
+                                        }`} src={template.imageSource} alt="error" />
                                     {
                                         mouseOver === template.name ?
                                             <div className='absolute mx-7 flex justify-between h-96 w-80 ml-2'>
