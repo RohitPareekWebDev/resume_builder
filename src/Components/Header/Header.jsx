@@ -20,7 +20,7 @@ function Header() {
 
             <div className='mt-2 font-bold text-xl '>
                 {/* Create NavLink components for different routes with the custom CSS class */}
-                <NavLink to="/" className={`max-lg:hidden ${NavLinkCss}`}> Resume Templates</NavLink>
+                <NavLink to="/" className={NavLinkCss}> Resume Templates</NavLink>
 
                 <NavLink to="/myresume" className={NavLinkCss}>My Resume</NavLink>
 

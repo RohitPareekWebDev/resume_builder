@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import img from './image/ProfileDefaultImg.jpg';
 import { stateNames } from '../ImagesFile/images';
+import { Link } from 'react-router-dom';
+
 
 function PersonalDetails() {
     const inputRef = useRef(null);
@@ -13,6 +15,11 @@ function PersonalDetails() {
     function handleImageChange(e) {
         setImage(e.target.files[0]);
     }
+
+    function workexp() {
+        <Link to='workexp' />
+    }
+    
     const inputCss = "w-full border rounded-lg p-2 shadow-blue-950 shadow-sm";
 
     return (
@@ -59,6 +66,7 @@ function PersonalDetails() {
                         <div>
                             <label htmlFor="email" className="block text-sm font-bold">Email</label>
                             <input type="email" id="email" className={inputCss} />
+
                         </div>
 
                         <div>
@@ -100,11 +108,16 @@ function PersonalDetails() {
                         <label htmlFor="description" className="block text-sm font-bold">Description</label>
                         <textarea name="description" id="description" className={inputCss} rows="6"></textarea>
                     </div>
+
+                    <div className='flex justify-end' >
+                        <Link to="/detailfilling/workexp">
+                            <button className="text-white bg-blue-500 m-2 p-2 rounded-2xl">Next</button>
+                        </Link>
+                    </div>
                 </form>
             </div>
 
-            <button></button>
-            <button></button>
+
         </div>
     );
 }
