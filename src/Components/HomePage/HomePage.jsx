@@ -13,7 +13,7 @@ function ResumeTemp() {
                     templateImages && templateImages.map((template) => {
                         return (
                             <div>
-                                <div className=' text-blue-500 flex justify-center font-bold mb-3 text-xl'><h2>{template.name}</h2></div>
+                                <div className=' text-blue-500 flex justify-center font-bold mb-5 text-xl'><h2>{template.name}</h2></div>
                                 <div
                                     onMouseOver={() => {
                                         //this function allows us to display 'Use Template'button on the top of the targeted template, when the user hovers over it by setting state's value to the targeted template name.//

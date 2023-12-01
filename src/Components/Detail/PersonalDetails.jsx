@@ -16,10 +16,6 @@ function PersonalDetails() {
         setImage(e.target.files[0]);
     }
 
-    function workexp() {
-        <Link to='workexp' />
-    }
-    
     const inputCss = "w-full border rounded-lg p-2 shadow-blue-950 shadow-sm";
 
     return (
