@@ -66,7 +66,7 @@ function PersonalDetails() {
                         </div>
 
                         <div>
-                            <label htmlFor="mobile" className="block text-sm font-bold">Mobile</label>
+                            <label htmlFor="mobile" className=" block text-sm font-bold">Mobile</label>
                             <input type="tel" id="mobile" className={inputCss} />
                         </div>
                     </div>
