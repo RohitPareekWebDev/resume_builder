@@ -15,57 +15,57 @@ function WorkExperience() {
         <div className=" flex w-3/4 flex-col p-5 shadow-gray-500 shadow-xl">
             <h1 className=' text-2xl font font-bold  text-justify mt-10 '>Work Experience</h1>
 
-            <div>
+            <div className='flex justify-center mt-10'>
                 <form action="">
-                    <div>
-                        <h2 className=' text-xl font font-bold  text-justify mt-10 border-b-2 border-blue-200'>Experience</h2>
 
-                        <div className='flex justify-center gap-5 mt-5' >
-                            <div >
-                                <label className=" text-sm font-bold" htmlFor="job title">Job title</label>
-                                <input className={`${inputCss}`} id="job title" type="text" placeholder='Enter Job Title' />
-                            </div>
+                    <h2 className=' text-xl font font-bold  text-justify mt-10 border-b-2 border-blue-200'>Experience</h2>
 
-                            <div>
-                                <label className=" text-sm font-bold" htmlFor="Organization Name">Organization Name</label>
-                                <input className={`${inputCss}`} id='Organization Name' type="text" placeholder='Enter Organization Name' />
-                            </div>
+                    <div className='grid grid-cols-2 gap-4' >
+                        <div >
+                            <label className=" text-sm font-bold" htmlFor="job title">Job title</label>
+                            <input className={`${inputCss}`} id="job title" type="text" placeholder='Enter Job Title' />
                         </div>
 
-                        <div className='flex justify-center gap-5 mt-5'>
-                            <div>
-                                <label className=" text-sm font-bold" htmlFor="Starting Year ">Start Year</label>
-                                <select className={`${inputCss}`} name="" id="">
-                                    <option className="text-blue-400" value="">Select</option>
-                                    {
-                                        year.map((yr, i) => {
-                                            return (
-                                                <option className="text-blue-400" key={i} >{yr}</option>
-                                            )
-                                        })}
-                                </select>
-                            </div>
-
-                            <div>
-                                <label className=" text-sm font-bold" htmlFor="Ending Year ">End Year</label>
-                                <select className={`${inputCss}`} name="" id="">
-                                    <option className="text-blue-400" value="">Select</option>
-                                    {
-                                        year.map((yr, i) => {
-                                            return (
-                                                <option className="text-blue-400" key={i} >{yr}</option>
-                                            )
-                                        })}
-                                </select>
-
-                            </div>
-
-                        </div>
-                        <div className='flex justify-center mt-5 gap-5 font-bold text-blue-500'>
-                            <button>Add Item</button>
-                            <button>Remove Item</button>
+                        <div>
+                            <label className=" text-sm font-bold" htmlFor="Organization Name">Organization Name</label>
+                            <input className={`${inputCss}`} id='Organization Name' type="text" placeholder='Enter Organization Name' />
                         </div>
                     </div>
+
+                    <div className='grid grid-cols-2 gap-4'>
+                        <div>
+                            <label className=" text-sm font-bold" htmlFor="Starting Year ">Start Year</label>
+                            <select className={`${inputCss}`} name="" id="">
+                                <option className="text-blue-400" value="">Select</option>
+                                {
+                                    year.map((yr, i) => {
+                                        return (
+                                            <option className="text-blue-400" key={i} >{yr}</option>
+                                        )
+                                    })}
+                            </select>
+                        </div>
+
+                        <div>
+                            <label className=" text-sm font-bold" htmlFor="Ending Year ">End Year</label>
+                            <select className={`${inputCss}`} name="" id="">
+                                <option className="text-blue-400" value="">Select</option>
+                                {
+                                    year.map((yr, i) => {
+                                        return (
+                                            <option className="text-blue-400" key={i} >{yr}</option>
+                                        )
+                                    })}
+                            </select>
+
+                        </div>
+
+                    </div>
+                    <div className='flex justify-center mt-5 gap-5 font-bold text-blue-500'>
+                        <button>Add Item</button>
+                        <button>Remove Item</button>
+                    </div>
+
                 </form>
             </div>
         </div>
