@@ -13,14 +13,14 @@ function WorkExperience() {
     }
     return (
         <div className=" flex w-3/4 flex-col p-5 shadow-gray-500 shadow-xl">
-            <h1 className=' text-2xl font font-bold  text-justify mt-10 '>Work Experience</h1>
+            <h1 className=' text-2xl font font-bold  text-justify mt-10 border-b-2 border-blue-400'>Work Experience</h1>
 
             <div className='flex justify-center mt-10'>
                 <form action="">
 
                     <h2 className=' text-xl font font-bold  text-justify mt-10 border-b-2 border-blue-200'>Experience</h2>
 
-                    <div className='grid grid-cols-2 gap-4' >
+                    <div className='grid grid-cols-2 gap-4 mt-2.5' >
                         <div >
                             <label className=" text-sm font-bold" htmlFor="job title">Job title</label>
                             <input className={`${inputCss}`} id="job title" type="text" placeholder='Enter Job Title' />
@@ -32,7 +32,7 @@ function WorkExperience() {
                         </div>
                     </div>
 
-                    <div className='grid grid-cols-2 gap-4'>
+                    <div className='grid grid-cols-2 gap-4 mt-2.5'>
                         <div>
                             <label className=" text-sm font-bold" htmlFor="Starting Year ">Start Year</label>
                             <select className={`${inputCss}`} name="" id="">

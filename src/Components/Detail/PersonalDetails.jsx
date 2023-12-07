@@ -31,7 +31,7 @@ function PersonalDetails() {
                         />
                     ) : (
                         <img
-                            style={{ height: "150px", marginRight: "100px" }}
+                            style={{ height: "150px", marginRight: "100px", border: "4px solid black" }}
                             className='ml-10 cursor-pointer border rounded-full'
                             src={img}
                             alt="error"
