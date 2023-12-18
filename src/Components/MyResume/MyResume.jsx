@@ -1,9 +1,10 @@
 import React from 'react'
+import Template_1 from '../Templates/Template_1'
 
 function MyResume() {
     return (
         <div>
-            <h1>this is resumte</h1>
+            <Template_1 />
         </div>
     )
 }

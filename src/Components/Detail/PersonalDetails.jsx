@@ -4,7 +4,9 @@ import { stateNames } from '../ImagesFile/images';
 import { Link } from 'react-router-dom';
 
 
+
 function PersonalDetails() {
+
     const inputRef = useRef(null);
     const [image, setImage] = useState("");
 
