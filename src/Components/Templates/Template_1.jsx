@@ -25,12 +25,29 @@ function Template_1() {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat exercitationem laboriosam o Magnam animi molestias incidunt dolore expedita quasi! Animi id a illum alias, accusantium sequi necessitatibus consectetur numquam, corrupti voluptatibus ex, vero modi nulla.</p>
                 </div>
 
-                <div className='flex justify-between'>
-                    <div><h2>Professional Experience</h2></div>
-                    <div className='flex items-center'>
-                        <h3>job title</h3>
+                <div className='flex p-5 border-b-4 outline-none border-blue-400 '>
+                    <div className='w-1/4 bg-orange-200 font-bold'><h2>Professional Experience</h2></div>
+                    <div className='grid w-3/4 bg-green-200'>
+                        <h3 className='font-bold'>Job Title</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quisquam explicabo magnam non totam alias sunt molestias aliquid a dolor?</p>
                     </div>
                 </div>
+
+                <div className='flex p-5 border-b-4 outline-none border-blue-400'>
+                    <div className='w-1/4 bg-orange-200 font-bold'><h2>Education</h2></div>
+                    <div className='grid w-3/4 bg-green-200'>
+                        <h3 className='font-bold'>Bachelor of Computer science</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quisquam explicabo magnam non totam alias sunt molestias aliquid a dolor?</p>
+                    </div>
+                </div>
+
+                <div className='flex p-5  outline-none '>
+                    <div className='w-1/4 bg-orange-200 font-bold'><h2>Key Skills</h2></div>
+                    <div className='grid w-3/4 bg-green-200'>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     );
