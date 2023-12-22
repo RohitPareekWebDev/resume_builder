@@ -2,15 +2,18 @@ import React from 'react';
 
 function Template_1() {
     return (
-        <div className='min-h-screen flex items-center justify-center bg-red-300'>
-            <div className='bg-white w-1/2 h-screen m-5 p-5'>
+        <div className='min-h-screen flex items-center justify-center  '>
+            <div className='w-1/2 h-screen m-5 p-5 shadow-black shadow-lg'>
                 <div className=' h-1/4 flex justify-between items-center border-b-8 outline-none border-blue-400'>
                     <div>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" width={'200px'} alt="" />
                     </div>
 
-                    <div className=' font-bold text-5xl'>
-                        <h1 >ROHIT PAREEK</h1>
+                    <div>
+                        <h1 className='font-bold text-5xl text-blue-400'>ROHIT PAREEK</h1>
+                        <div className='flex justify-center'>
+                            <h3 className='font-bold'>Job Title</h3>
+                        </div>
                     </div>
                     <div className='w-52'>
                         sereenawislon@gamil.com
@@ -26,24 +29,24 @@ function Template_1() {
                 </div>
 
                 <div className='flex p-5 border-b-4 outline-none border-blue-400 '>
-                    <div className='w-1/4 bg-orange-200 font-bold'><h2>Professional Experience</h2></div>
-                    <div className='grid w-3/4 bg-green-200'>
-                        <h3 className='font-bold'>Job Title</h3>
+                    <div className='w-1/4 font-bold text-blue-400'><h2>Professional Experience</h2></div>
+                    <div className='grid w-3/4 '>
+                        <h3 className='font-bold text-blue-400'>Job Title</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quisquam explicabo magnam non totam alias sunt molestias aliquid a dolor?</p>
                     </div>
                 </div>
 
                 <div className='flex p-5 border-b-4 outline-none border-blue-400'>
-                    <div className='w-1/4 bg-orange-200 font-bold'><h2>Education</h2></div>
-                    <div className='grid w-3/4 bg-green-200'>
-                        <h3 className='font-bold'>Bachelor of Computer science</h3>
+                    <div className='w-1/4 font-bold text-blue-400'><h2>Education</h2></div>
+                    <div className='grid w-3/4 '>
+                        <h3 className='font-bold text-blue-400'>Bachelor of Computer science</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quisquam explicabo magnam non totam alias sunt molestias aliquid a dolor?</p>
                     </div>
                 </div>
 
                 <div className='flex p-5  outline-none '>
-                    <div className='w-1/4 bg-orange-200 font-bold'><h2>Key Skills</h2></div>
-                    <div className='grid w-3/4 bg-green-200'>
+                    <div className='w-1/4  font-bold text-blue-400'><h2>Key Skills</h2></div>
+                    <div className='grid w-3/4 '>
 
                     </div>
                 </div>
