@@ -2,7 +2,7 @@ import React from 'react';
 
 function Template_2() {
     return (
-        <div className='min-h-screen flex items-center justify-center bg-gray-500 '>
+        <div className='min-h-screen flex items-center justify-center '>
             <div className='w-1/2 h-screen m-5 p-5 shadow-black shadow-lg'>
                 <div className=' h-1/4 flex justify-between items-center bg-pink-400 border-b-8 outline-none border-pink-400'>
                     <div>
