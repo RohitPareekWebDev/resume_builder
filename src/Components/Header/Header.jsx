@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import './Header.css';
 import { NavLink } from 'react-router-dom'
+import { GiHamburgerMenu } from "react-icons/gi";
 
 // Define a functional component named 'Header'
 function Header() {
-
+    const [showMediaIcons, setShowMediaIcons] = useState(false);
 
     // Define a custom CSS class for NavLink components
     const NavLinkCss = ({ isActive }) => `${isActive ? "text-blue-500" : "text-black"} p-2 mx-5 hover:text-blue-500`
@@ -18,13 +20,23 @@ function Header() {
                 </NavLink>
             </span>
 
-            <div className='mt-2 font-bold text-xl '>
-                {/* Create NavLink components for different routes with the custom CSS class */}
+            <div className={showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"}>
+
                 <NavLink to="/" className={NavLinkCss}> Resume Templates</NavLink>
 
                 <NavLink to="/myresume" className={NavLinkCss}>My Resume</NavLink>
 
                 <NavLink to="/about" className={NavLinkCss}>About Us</NavLink>
+            </div>
+
+            <div className="social-media">
+
+                {/* hamburget menu start  */}
+                <div className="hamburger-menu">
+                    <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
+                        <GiHamburgerMenu />
+                    </a>
+                </div>
             </div>
         </nav>
     )

@@ -3,6 +3,7 @@ import { templateImages } from '../ImagesFile/images'
 import { NavLink } from 'react-router-dom'
 function ResumeTemp() {
     const [mouseOver, setMouseOver] = useState("mouseNotOver")
+
     return (
         <div className='container flex flex-col items-center justify-center h-auto  mx-auto'>
             <div >
@@ -47,10 +48,3 @@ function ResumeTemp() {
 }
 
 export default ResumeTemp
-
-
-{/* <div className='absolute bg-black bg-opacity-20 mx-7 flex justify-between h-96 w-80 ml-2'>
-<div className='absolute inset-0 flex items-center justify-center'>
-    <button id='tempUseBtn' className='bg-blue-500 h-10 px-2 rounded-xl font-bold text-white'>Use Template</button>
-</div>
-</div>  */}
