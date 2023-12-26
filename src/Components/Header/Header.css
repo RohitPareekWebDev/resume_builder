@@ -8,7 +8,7 @@
 }
 
 html {
-  font-size: 80%;
+  font-size: 62.5%;
 }
 
 a {
@@ -19,7 +19,10 @@ li {
   list-style: none;
 }
 
-/* navbar style start  */
+/* 
+  
+
+  /* navbar style start  */
 
 .main-nav {
   width: 100%;
@@ -41,26 +44,6 @@ li {
   align-items: center;
 }
 
-.social-media {
-  grid-column: 4/5;
-}
-
-.social-media ul {
-  height: 10rem;
-  display: grid;
-  grid-template-columns: 3fr repeat(3, 1fr);
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.social-media ul li {
-  text-align: right;
-}
-
-.social-media ul li:first-child {
-  grid-column: 2/3;
-}
-
 /* ----------- Grid part ends ----------------- */
 
 .menu-link ul li {
@@ -79,11 +62,7 @@ li {
   transition: 0.5s;
 }
 
-.social-media ul li {
-  font-size: 1.8rem;
-}
-
-.social-media .hamburger-menu {
+.hamburger-menu {
   display: none;
 }
 
@@ -94,21 +73,20 @@ li {
     grid-template-columns: 2rem 3fr 3fr 1fr 2rem;
   }
 
-  .logo,
-  .menu-link ul,
-  .social-media ul {
+  .menu-link ul {
     height: 8rem;
   }
 }
 
 /* responsive css style  */
 @media (max-width: 998px) {
-  .menu-link {
-    display: none;
+  .main-nav {
+    height: 7rem;
+    grid-template-columns: 2rem 2fr 3fr 2rem 2rem;
   }
 
-  .social-media ul {
-    height: 7rem;
+  .menu-link {
+    display: none;
   }
 
   .mobile-menu-link {
@@ -142,27 +120,7 @@ li {
     transition-delay: 0.2s;
   }
 
-  .social-media {
-    grid-row: 1/2;
-    grid-column: 3/5;
-    justify-items: end;
-    align-items: center;
-    transition: all 2s linear;
-  }
-
-  .social-media {
-    height: 0;
-    display: none;
-  }
-
-  .social-media {
-    height: 7rem;
-    display: flex;
-    justify-self: end;
-    align-items: center;
-  }
-
-  .social-media .hamburger-menu {
+  .hamburger-menu {
     display: block;
     font-size: 2.5rem;
   }
@@ -174,18 +132,7 @@ li {
     grid-template-columns: 1rem 2fr 1fr 1fr 1rem;
   }
 
-  .social-media ul {
-    height: 6rem;
-  }
-
-  .social-media {
-    height: 6rem;
-    display: flex;
-    justify-self: end;
-    align-items: center;
-  }
-
-  .social-media .hamburger-menu {
+  .hamburger-menu {
     display: block;
     font-size: 2.5rem;
   }
@@ -197,18 +144,7 @@ li {
     grid-template-columns: 1rem 4fr 1fr 1fr 1rem;
   }
 
-  .social-media ul {
-    height: 6rem;
-  }
-
-  .social-media {
-    height: 6rem;
-    display: flex;
-    justify-self: end;
-    align-items: center;
-  }
-
-  .social-media .hamburger-menu {
+  .hamburger-menu {
     display: block;
     font-size: 2.5rem;
   }
