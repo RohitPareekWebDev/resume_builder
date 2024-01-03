@@ -25,7 +25,7 @@ function About() {
             </div>
 
             <div style={{ width: "30%" }}>
-                <img className="mt-40 " src={img} alt="" />
+                <img className="mt-40 " src={img} alt="error" />
             </div>
         </div>
     )
