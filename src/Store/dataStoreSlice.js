@@ -8,8 +8,7 @@ export const dataStoreSlice = createSlice({
       lastName: "",
       Email: "",
       Mobile: "",
-      Address1: "",
-      Address2: "",
+      Address: "",
       City: "",
       State: "",
       Pin: "",
@@ -43,7 +42,7 @@ export const dataStoreSlice = createSlice({
   reducers: {
     updatePersonalInfo: (state, action) => {
       //this function updates the targeted key of the personalInfo element of dataStore //
-      state.personalInfo[action.payload.key] = action.payload.value;
+      state.personalInfo = action.payload;
     },
 
     updateWorkEx: (state, action) => {
@@ -65,14 +64,7 @@ export const dataStoreSlice = createSlice({
       //this function can be called to update any targeted element of dataStore //
       state[action.payload.key] = action.payload.value;
     },
-    updateErrorMessages: (state, action) => {
-      //this function updates errorMessages element of dataStore //
-      let key = action.payload.key;
-      if (action.payload.index) {
-        key += "_" + action.payload.index;
-      }
-      state.errorMessages[key] = action.payload.value;
-    },
+
     addArrayElement: (state, action) => {
       //this function is used to push a blank object in the array of elements(workEx,education& keySkills)
       //when the user clicks on the Add-new button to add more related details//

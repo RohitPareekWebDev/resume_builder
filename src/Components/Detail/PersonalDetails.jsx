@@ -6,13 +6,34 @@ import { useDispatch } from "react-redux";
 import { updatePersonalInfo } from "../../Store/dataStoreSlice";
 
 function PersonalDetails() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState({
+    firstName: "",
+    lastName: "",
+    Email: "",
+    Mobile: "",
+    Address: "",
+    City: "",
+    State: "",
+    Pin: "",
+    Objective: "",
+  });
   const dispatch = useDispatch();
 
   const addPersonalinfo = (e) => {
-    e.preventDefault();
+    console.log("form submitted");
+    console.table(input);
     dispatch(updatePersonalInfo(input));
-    setInput("");
+    setInput({
+      firstName: "",
+      lastName: "",
+      Email: "",
+      Mobile: "",
+      Address: "",
+      City: "",
+      State: "",
+      Pin: "",
+      Objective: "",
+    });
   };
 
   const inputRef = useRef(null);
@@ -75,8 +96,10 @@ function PersonalDetails() {
                 type="text"
                 id="firstname"
                 className={inputCss}
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
+                value={input.firstName}
+                onChange={(e) =>
+                  setInput({ ...input, firstName: e.target.value })
+                }
               />
             </div>
 
@@ -84,7 +107,15 @@ function PersonalDetails() {
               <label htmlFor="lastname" className="block text-sm font-bold">
                 Last name
               </label>
-              <input type="text" id="lastname" className={inputCss} />
+              <input
+                type="text"
+                id="lastname"
+                className={inputCss}
+                value={input.lastName}
+                onChange={(e) =>
+                  setInput({ ...input, lastName: e.target.value })
+                }
+              />
             </div>
           </div>
 
@@ -93,14 +124,26 @@ function PersonalDetails() {
               <label htmlFor="email" className="block text-sm font-bold">
                 Email
               </label>
-              <input type="email" id="email" className={inputCss} />
+              <input
+                type="email"
+                id="email"
+                className={inputCss}
+                value={input.Email}
+                onChange={(e) => setInput({ ...input, Email: e.target.value })}
+              />
             </div>
 
             <div>
               <label htmlFor="mobile" className=" block text-sm font-bold">
                 Mobile
               </label>
-              <input type="tel" id="mobile" className={inputCss} />
+              <input
+                type="tel"
+                id="mobile"
+                className={inputCss}
+                value={input.Mobile}
+                onChange={(e) => setInput({ ...input, Mobile: e.target.value })}
+              />
             </div>
           </div>
 
@@ -108,7 +151,13 @@ function PersonalDetails() {
             <label htmlFor="address" className="block text-sm font-bold">
               Address
             </label>
-            <input type="text" id="address" className={inputCss} />
+            <input
+              type="text"
+              id="address"
+              className={inputCss}
+              value={input.Address}
+              onChange={(e) => setInput({ ...input, Address: e.target.value })}
+            />
           </div>
 
           <div className="grid grid-cols-2 gap-4 mt-4">
@@ -116,17 +165,29 @@ function PersonalDetails() {
               <label htmlFor="city" className="block text-sm font-bold">
                 City
               </label>
-              <input type="text" id="city" className={inputCss} />
+              <input
+                type="text"
+                id="city"
+                className={inputCss}
+                value={input.City}
+                onChange={(e) => setInput({ ...input, City: e.target.value })}
+              />
             </div>
 
             <div>
               <label htmlFor="state" className="block text-sm font-bold">
                 State
               </label>
-              <select name="state" id="state" className={inputCss}>
-                <option value="null">Select Option</option>
+              <select
+                value={input.State}
+                onChange={(e) => setInput({ ...input, State: e.target.value })}
+                name="state"
+                id="state"
+                className={inputCss}
+              >
+                <option>Select Option</option>
                 {stateNames.map((state, i) => (
-                  <option value={state} key={i} className="text-blue-900 ">
+                  <option key={i} className="text-blue-900 ">
                     {state}
                   </option>
                 ))}
@@ -138,18 +199,28 @@ function PersonalDetails() {
             <label htmlFor="postalcode" className="block text-sm font-bold">
               Postal Code
             </label>
-            <input type="text" id="postalcode" className={inputCss} />
+            <input
+              type="text"
+              id="postalcode"
+              className={inputCss}
+              value={input.Pin}
+              onChange={(e) => setInput({ ...input, Pin: e.target.value })}
+            />
           </div>
 
           <div className="mt-4">
-            <label htmlFor="description" className="block text-sm font-bold">
-              Description
+            <label htmlFor="objective" className="block text-sm font-bold">
+              Objective
             </label>
             <textarea
-              name="description"
-              id="description"
+              name="objective"
+              id="objective"
               className={inputCss}
               rows="6"
+              value={input.Objective}
+              onChange={(e) =>
+                setInput({ ...input, Objective: e.target.value })
+              }
             ></textarea>
           </div>
 
@@ -157,6 +228,7 @@ function PersonalDetails() {
             <Link to="/detailfilling/workexp">
               <button
                 type="submit"
+                onClick={addPersonalinfo}
                 className="text-white bg-blue-500 m-2 p-2 rounded-2xl"
               >
                 Next

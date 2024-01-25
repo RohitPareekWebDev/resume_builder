@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useSelector } from "react-redux";
 function Template_1() {
+  const dataStore = useSelector((state) => state.dataStore);
   return (
     <div className="min-h-screen flex items-center justify-center  ">
       <div className="w-1/2 h-screen m-5 p-5 shadow-black shadow-lg">
@@ -10,26 +11,29 @@ function Template_1() {
           </div>
 
           <div>
-            <h1 className="font-bold text-5xl text-blue-400">ROHIT PAREEK</h1>
+            <h1
+              className="font-bold text-5xl text-blue-400"
+              style={{ color: "#00adb5", fontSize: "55px" }}
+            >
+              {dataStore.personalInfo.firstName + " " + dataStore.personalInfo.lastName}
+            </h1>
             <div className="flex justify-center">
               <h3 className="font-bold">Job Title</h3>
             </div>
           </div>
           <div className="w-52">
-            sereenawislon@gamil.com 43479857409 <br />
-            Apartment 4, Wall Street, Lane Journal, jummaidnagar, Karnataka,
-            686674
+            <div>{dataStore.personalInfo.Email}</div>
+            <div>{dataStore.personalInfo.Mobile}</div>
+            <div>{dataStore.personalInfo.Address + ",  " + dataStore.personalInfo.City + ", " + dataStore.personalInfo.State + ", " + dataStore.personalInfo.Pin}
+            </div>
           </div>
         </div>
 
-        <div className="p-5 border-b-4 outline-none border-blue-400">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            exercitationem laboriosam o Magnam animi molestias incidunt dolore
-            expedita quasi! Animi id a illum alias, accusantium sequi
-            necessitatibus consectetur numquam, corrupti voluptatibus ex, vero
-            modi nulla.
-          </p>
+        <div className="p-5 border-b-4 outline-none border-blue-400 text-justify.
+        ">
+
+          {dataStore.personalInfo.Objective}
+
         </div>
 
         <div className="flex p-5 border-b-4 outline-none border-blue-400 ">
