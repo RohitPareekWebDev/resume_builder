@@ -19,8 +19,7 @@ export const dataStoreSlice = createSlice({
         title: "",
         orgName: "",
         startYear: "",
-        endYear: "",
-        jobDescription: "",
+        endYear: ""
       },
     ],
     education: [
@@ -47,8 +46,7 @@ export const dataStoreSlice = createSlice({
 
     updateWorkEx: (state, action) => {
       //this function updates the targeted key of the workEx element of dataStore //
-      state.workEx[action.payload.index][action.payload.key] =
-        action.payload.value;
+      state.workEx = action.payload;
     },
     updateEducation: (state, action) => {
       //this function updates the targeted key of the education element of dataStore //

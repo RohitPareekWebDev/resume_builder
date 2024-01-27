@@ -1,7 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { updateWorkEx } from "../../Store/dataStoreSlice";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
 
 function WorkExperience() {
+  const [input, setInput] = useState({
+    title: "",
+    orgName: "",
+    startYear: "",
+    endYear: "",
+  });
+  const dispatch = useDispatch();
+
+  const addWorkEx = () => {
+    console.log("form submitted");
+    console.table(input);
+    dispatch(updateWorkEx(input));
+    setInput({
+      title: "",
+      orgName: "",
+      startYear: "",
+      endYear: "",
+    });
+  };
+
   let inputCss = "w-full border rounded-lg p-2 shadow-blue-950 shadow-sm";
   let year = yearRange(2000, 2024);
   function yearRange(start, end) {
@@ -19,7 +42,7 @@ function WorkExperience() {
       </h1>
 
       <div className="flex justify-center mt-10">
-        <form action="">
+        <form onSubmit={addWorkEx}>
           <h2 className=" text-xl font font-bold  text-justify mt-10 border-b-2 border-blue-200">
             Experience
           </h2>
@@ -33,7 +56,11 @@ function WorkExperience() {
                 className={`${inputCss}`}
                 id="job title"
                 type="text"
-                placeholder="Enter Job Title"
+                // placeholder="Enter Job Title"
+                value={input}
+                onChange={(e) => {
+                  setInput({ ...input, title: e.target.value });
+                }}
               />
             </div>
 
@@ -48,6 +75,7 @@ function WorkExperience() {
                 placeholder="Enter Organization Name"
               />
             </div>
+            
           </div>
 
           <div className="grid grid-cols-2 gap-4 mt-2.5">
@@ -91,17 +119,19 @@ function WorkExperience() {
             <button>Add Item</button>
             <button>Remove Item</button>
           </div>
+
+          <div className="flex justify-end">
+            <Link to="/detailfilling/education">
+              <button
+                type="submit"
+                onClick={addWorkEx}
+                className="text-white bg-blue-500 m-2 p-2 rounded-2xl"
+              >
+                Next
+              </button>
+            </Link>
+          </div>
         </form>
-      </div>
-      <div className="flex justify-end">
-        <Link to="/detailfilling/education">
-          <button
-            type="submit"
-            className="text-white bg-blue-500 m-2 p-2 rounded-2xl"
-          >
-            Next
-          </button>
-        </Link>
       </div>
     </div>
   );

@@ -15,7 +15,9 @@ function Template_1() {
               className="font-bold text-5xl text-blue-400"
               style={{ color: "#00adb5", fontSize: "55px" }}
             >
-              {dataStore.personalInfo.firstName + " " + dataStore.personalInfo.lastName}
+              {dataStore.personalInfo.firstName +
+                " " +
+                dataStore.personalInfo.lastName}
             </h1>
             <div className="flex justify-center">
               <h3 className="font-bold">Job Title</h3>
@@ -24,16 +26,23 @@ function Template_1() {
           <div className="w-52">
             <div>{dataStore.personalInfo.Email}</div>
             <div>{dataStore.personalInfo.Mobile}</div>
-            <div>{dataStore.personalInfo.Address + ",  " + dataStore.personalInfo.City + ", " + dataStore.personalInfo.State + ", " + dataStore.personalInfo.Pin}
+            <div>
+              {dataStore.personalInfo.Address +
+                ",  " +
+                dataStore.personalInfo.City +
+                ", " +
+                dataStore.personalInfo.State +
+                ", " +
+                dataStore.personalInfo.Pin}
             </div>
           </div>
         </div>
 
-        <div className="p-5 border-b-4 outline-none border-blue-400 text-justify.
-        ">
-
+        <div
+          className="p-5 border-b-4 outline-none border-blue-400 text-justify.
+        "
+        >
           {dataStore.personalInfo.Objective}
-
         </div>
 
         <div className="flex p-5 border-b-4 outline-none border-blue-400 ">
@@ -41,7 +50,9 @@ function Template_1() {
             <h2>Professional Experience</h2>
           </div>
           <div className="grid w-3/4 ">
-            <h3 className="font-bold text-blue-400">Job Title</h3>
+            <h3 className="font-bold text-blue-400">
+              {dataStore.workEx.title}
+            </h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Praesentium quisquam explicabo magnam non totam alias sunt
