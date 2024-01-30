@@ -20,7 +20,11 @@ export const dataStoreSlice = createSlice({
         title: "",
         orgName: "",
         startYear: "",
+<<<<<<< HEAD
         endYear: "",
+=======
+        endYear: ""
+>>>>>>> 68d25688482fa4226cbcfdadc5b3f78aedeead4e
       },
     ],
     education: [
@@ -47,6 +51,7 @@ export const dataStoreSlice = createSlice({
 
     updateWorkEx: (state, action) => {
       //this function updates the targeted key of the workEx element of dataStore //
+<<<<<<< HEAD
       const exp = {
         id: nanoid(),
         title: action.payload.title,
@@ -55,6 +60,23 @@ export const dataStoreSlice = createSlice({
         endYear: action.payload.endYear,
       };
       state.workEx.push(exp);
+=======
+      state.workEx = action.payload;
+    },
+    updateEducation: (state, action) => {
+      //this function updates the targeted key of the education element of dataStore //
+      state.education[action.payload.index][action.payload.key] =
+        action.payload.value;
+    },
+    updateKeySkills: (state, action) => {
+      //this function updates the targeted key of the keySkills element of dataStore //
+      state.skills[action.payload.index][action.payload.key] =
+        action.payload.value;
+    },
+    updateState: (state, action) => {
+      //this function can be called to update any targeted element of dataStore //
+      state[action.payload.key] = action.payload.value;
+>>>>>>> 68d25688482fa4226cbcfdadc5b3f78aedeead4e
     },
 
     removeWorkEx: (state, action) => {
