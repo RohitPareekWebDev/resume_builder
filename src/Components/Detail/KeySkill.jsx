@@ -8,7 +8,7 @@ function Education() {
   const [skills, setSkills] = useState([""]); // Initial state with one empty skill
   const inputCss = "w-full border rounded-lg p-2 shadow-blue-950 shadow-sm";
 
-  const addSkills = (e) => {
+  const addSkills = () => {
     e.preventDefault();
     dispatch(updateSkills(skills));
     console.table(skills);
