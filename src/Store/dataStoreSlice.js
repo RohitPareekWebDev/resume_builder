@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 export const dataStoreSlice = createSlice({
   name: "dataStore",
@@ -16,11 +16,11 @@ export const dataStoreSlice = createSlice({
     },
     workEx: [
       {
+        id: 1,
         title: "",
         orgName: "",
         startYear: "",
         endYear: "",
-        jobDescription: "",
       },
     ],
     education: [
@@ -47,45 +47,28 @@ export const dataStoreSlice = createSlice({
 
     updateWorkEx: (state, action) => {
       //this function updates the targeted key of the workEx element of dataStore //
-      state.workEx[action.payload.index][action.payload.key] =
-        action.payload.value;
-    },
-    updateEducation: (state, action) => {
-      //this function updates the targeted key of the education element of dataStore //
-      state.education[action.payload.index][action.payload.key] =
-        action.payload.value;
-    },
-    updateKeySkills: (state, action) => {
-      //this function updates the targeted key of the keySkills element of dataStore //
-      state.skills[action.payload.index][action.payload.key] =
-        action.payload.value;
-    },
-    updateState: (state, action) => {
-      //this function can be called to update any targeted element of dataStore //
-      state[action.payload.key] = action.payload.value;
+      const exp = {
+        id: nanoid(),
+        title: action.payload.title,
+        orgName: action.payload.orgName,
+        startYear: action.payload.startYear,
+        endYear: action.payload.endYear,
+      };
+      state.workEx.push(exp);
     },
 
-    addArrayElement: (state, action) => {
-      //this function is used to push a blank object in the array of elements(workEx,education& keySkills)
-      //when the user clicks on the Add-new button to add more related details//
-      state[action.payload.key].push(action.payload.element);
+    removeWorkEx: (state, action) => {
+      state.workEx = state.workEx.filter(
+        (workEx) => workEx.id !== action.payload
+      );
     },
-    removeArrayElement: (state, action) => {
-      //this function deletes the latest saved details in the array of elements(workEx,education& keySkills), when the user clicks on the remove button//
-      state[action.payload.key].pop();
+    updateSkills: (state, action) => {
+      state.skills = action.payload;
     },
   },
 });
 
-export const {
-  updatePersonalInfo,
-  updateWorkEx,
-  updateEducation,
-  updateKeySkills,
-  updateErrorMessages,
-  updateState,
-  addArrayElement,
-  removeArrayElement,
-} = dataStoreSlice.actions;
+export const { updatePersonalInfo, updateWorkEx, updateSkills } =
+  dataStoreSlice.actions;
 
 export default dataStoreSlice.reducer;

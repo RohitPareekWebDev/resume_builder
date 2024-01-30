@@ -38,7 +38,7 @@ function Template_1() {
 
         <div className="flex p-5 border-b-4 outline-none border-blue-400 ">
           <div className="w-1/4 font-bold text-blue-400">
-            <h2>Professional Experience</h2>
+            <h2>Experience</h2>
           </div>
           <div className="grid w-3/4 ">
             <h3 className="font-bold text-blue-400">Job Title</h3>
