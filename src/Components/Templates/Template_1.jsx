@@ -54,9 +54,7 @@ function Template_1() {
               {dataStore.workEx.title}
             </h3>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Praesentium quisquam explicabo magnam non totam alias sunt
-              molestias aliquid a dolor?
+
             </p>
           </div>
         </div>
@@ -81,7 +79,7 @@ function Template_1() {
           <div className="w-1/4  font-bold text-blue-400">
             <h2>Key Skills</h2>
           </div>
-          <div className="grid w-3/4 "></div>
+          <div className="grid w-3/4 ">{dataStore.skills}</div>
         </div>
       </div>
     </div>
