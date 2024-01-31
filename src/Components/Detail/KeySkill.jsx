@@ -10,7 +10,7 @@ function Education() {
 
   const addSkills = (e) => {
     e.preventDefault();
-    dispatch(updateSkills(skills));
+    dispatch(updateSkills([skills]));
     console.table(skills);
     setSkills([""])
   }
