@@ -1,4 +1,4 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const dataStoreSlice = createSlice({
   name: "dataStore",
@@ -8,7 +8,8 @@ export const dataStoreSlice = createSlice({
       lastName: "",
       Email: "",
       Mobile: "",
-      Address: "",
+      Address1: "",
+      Address2: "",
       City: "",
       State: "",
       Pin: "",
@@ -16,15 +17,11 @@ export const dataStoreSlice = createSlice({
     },
     workEx: [
       {
-        id: 1,
         title: "",
         orgName: "",
         startYear: "",
-<<<<<<< HEAD
         endYear: "",
-=======
-        endYear: ""
->>>>>>> 68d25688482fa4226cbcfdadc5b3f78aedeead4e
+        jobDescription: "",
       },
     ],
     education: [
@@ -46,22 +43,13 @@ export const dataStoreSlice = createSlice({
   reducers: {
     updatePersonalInfo: (state, action) => {
       //this function updates the targeted key of the personalInfo element of dataStore //
-      state.personalInfo = action.payload;
+      state.personalInfo[action.payload.key] = action.payload.value;
     },
 
     updateWorkEx: (state, action) => {
       //this function updates the targeted key of the workEx element of dataStore //
-<<<<<<< HEAD
-      const exp = {
-        id: nanoid(),
-        title: action.payload.title,
-        orgName: action.payload.orgName,
-        startYear: action.payload.startYear,
-        endYear: action.payload.endYear,
-      };
-      state.workEx.push(exp);
-=======
-      state.workEx = action.payload;
+      state.workEx[action.payload.index][action.payload.key] =
+        action.payload.value;
     },
     updateEducation: (state, action) => {
       //this function updates the targeted key of the education element of dataStore //
@@ -76,21 +64,32 @@ export const dataStoreSlice = createSlice({
     updateState: (state, action) => {
       //this function can be called to update any targeted element of dataStore //
       state[action.payload.key] = action.payload.value;
->>>>>>> 68d25688482fa4226cbcfdadc5b3f78aedeead4e
     },
-
-    removeWorkEx: (state, action) => {
-      state.workEx = state.workEx.filter(
-        (workEx) => workEx.id !== action.payload
-      );
+    updateErrorMessages: (state, action) => {
+      //this function updates errorMessages element of dataStore //
+      let key = action.payload.key;
+      if (action.payload.index) {
+        key += "_" + action.payload.index;
+      }
+      state.errorMessages[key] = action.payload.value;
     },
-    updateSkills: (state, action) => {
-      state.skills = action.payload;
+    addArrayElement: (state, action) => {
+      //this function is used to push a blank object in the array of elements(workEx,education& keySkills)
+      //when the user clicks on the Add-new button to add more related details//
+      state[action.payload.key].push(action.payload.element);
+    },
+    removeArrayElement: (state, action) => {
+      //this function deletes the latest saved details in the array of elements(workEx,education& keySkills), when the user clicks on the remove button//
+      state[action.payload.key].pop();
     },
   },
 });
 
-export const { updatePersonalInfo, updateWorkEx, updateSkills } =
-  dataStoreSlice.actions;
+export const {
+  updatePersonalInfo,
+  updateWorkEx,
+  updateEducation,
+  updateSkills,
+} = dataStoreSlice.actions;
 
 export default dataStoreSlice.reducer;
